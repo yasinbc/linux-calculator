@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include "add.h"
 #include "subtract.h"
+#include "multiply.h"
+#include "divide.h"
 
 void v_clear_buffer(){
     int c;
@@ -61,7 +63,7 @@ int main(void){
                 printf("Enter 2 values to multiply\n");
                 scanf("%i", &i_value1);
                 scanf("%i", &i_value2);
-                printf("%i * %i = %i", i_value1, i_value2, ( i_value1 * i_value2 ) /*multiply(i_value1, i_value2)*/ );
+                printf("%i * %i = %i", i_value1, i_value2, /*( i_value1 * i_value2 )*/ i_multiply(i_value1, i_value2) );
                 break;
             case 'd':
                 printf("Divide function\n\n");
@@ -69,7 +71,7 @@ int main(void){
                 printf("Enter 2 values to divide\n");
                 scanf("%f", &f_value1);
                 scanf("%f", &f_value2);
-                printf("%f / %f = %f", f_value1, f_value2, ( f_value1 / f_value2 ) /*divide(f_value1, f_value2)*/ );
+                printf("%f / %f = %f", f_value1, f_value2, /*( f_value1 / f_value2 )*/ f_divide(f_value1, f_value2) );
                 break;
             case 'e':
                 printf("See you next time\n\n");
