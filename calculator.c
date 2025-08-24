@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
-
+#include "add.h"
 
 void v_clear_buffer(){
     int c;
@@ -44,7 +44,7 @@ int main(void){
                 printf("Enter 2 values to add\n");
                 scanf("%i", &i_value1);
                 scanf("%i", &i_value2);
-                printf("%i + %i = %i\n", i_value1, i_value2, ( i_value1 + i_value2 ) /*add(i_value1, i_value2)*/ );
+                printf("%i + %i = %i\n", i_value1, i_value2, /*( i_value1 + i_value2 )*/ i_add(i_value1, i_value2) );
                 break;
             case 's':
                 printf("Subtract function\n\n");
