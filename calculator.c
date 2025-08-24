@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include "add.h"
+#include "subtract.h"
 
 void v_clear_buffer(){
     int c;
@@ -52,7 +53,7 @@ int main(void){
                 printf("Enter 2 values to subtract\n");
                 scanf("%i", &i_value1);
                 scanf("%i", &i_value2);
-                printf("%i - %i = %i", i_value1, i_value2, ( i_value1 - i_value2 ) /*subtract(i_value1, i_value2)*/ );
+                printf("%i - %i = %i", i_value1, i_value2, /*( i_value1 - i_value2 )*/ i_subtract(i_value1, i_value2) );
                 break;
             case 'm':
                 printf("Multiply function\n\n");
