@@ -1,5 +1,5 @@
-#ifndef RESTAR_H_
-#define RESTAR_H_
+#ifndef SUBTRACT_H_
+#define SUBTRACT_H_
 
 int i_subtract(int i_value1, int i_value2);
 
