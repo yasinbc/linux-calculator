@@ -12,7 +12,6 @@ void clear_input_buffer(){
 }
 
 
-
 int main(void){
     char user_choice;
     bool should_loop;
@@ -48,7 +47,7 @@ int main(void){
                 printf("Enter 2 values to add\n");
                 scanf("%i", &first_integer);
                 scanf("%i", &second_integer);
-                printf("%i + %i = %i\n", first_integer, second_integer, /*( first_integer + second_integer )*/ add_integers(first_integer, second_integer) );
+                printf("%i + %i = %i\n", first_integer, second_integer, add_integers(first_integer, second_integer) );
                 break;
             case 's':
                 printf("Subtract function\n\n");
@@ -56,7 +55,7 @@ int main(void){
                 printf("Enter 2 values to subtract\n");
                 scanf("%i", &first_integer);
                 scanf("%i", &second_integer);
-                printf("%i - %i = %i", first_integer, second_integer, /*( first_integer - second_integer )*/ subtract_integers(first_integer, second_integer) );
+                printf("%i - %i = %i", first_integer, second_integer, subtract_integers(first_integer, second_integer) );
                 break;
             case 'm':
                 printf("Multiply function\n\n");
@@ -64,7 +63,7 @@ int main(void){
                 printf("Enter 2 values to multiply\n");
                 scanf("%i", &first_integer);
                 scanf("%i", &second_integer);
-                printf("%i * %i = %i", first_integer, second_integer, /*( first_integer * second_integer )*/ multiply_integers(first_integer, second_integer) );
+                printf("%i * %i = %i", first_integer, second_integer, multiply_integers(first_integer, second_integer) );
                 break;
             case 'd':
                 printf("Divide function\n\n");
@@ -72,7 +71,7 @@ int main(void){
                 printf("Enter 2 values to divide\n");
                 scanf("%f", &first_float);
                 scanf("%f", &second_float);
-                printf("%f / %f = %f", first_float, second_float, /*( first_float / second_float )*/ divide_floats(first_float, second_float) );
+                printf("%f / %f = %f", first_float, second_float, divide_floats(first_float, second_float) );
                 break;
             case 'e':
                 printf("See you next time\n\n");
