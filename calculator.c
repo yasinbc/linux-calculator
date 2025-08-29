@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <string.h>
 #include "add.h"
 #include "subtract.h"
 #include "multiply.h"
@@ -11,7 +12,30 @@ void clear_input_buffer(){
     while( (character = getchar()) != '\n' && character != EOF );
 }
 
+//main_v1
+int main(void){
 
+    char input_calculator[20];
+
+    printf("Enter your calculation with 2 operands (\'+\', \'-\', \'*\' o \'/\')\n");
+        
+    fgets(input_calculator, sizeof(input_calculator), stdin);
+
+    for(int index = 0; index <= sizeof(input_calculator); index++){
+        if (input_calculator[0] != '\n'){
+            printf("Written\n");
+            break;
+        }else{
+            printf("EMPTY STRING\n");
+            break;
+        }
+    }
+
+    return 0;
+}
+
+
+/*
 int main(void){
     char user_choice;
     bool should_loop;
@@ -26,11 +50,14 @@ int main(void){
     first_float = 0.0;
     second_float = 0.0;
     user_choice = '\0';
-    
 
+    //main_v1
+    char input_calculator[20];
+
+    
     while(should_loop){
         system("clear");
-
+        
         printf("Choose an option: \n");
         printf("\n");
         printf("Add       (a)\n");
@@ -100,3 +127,4 @@ int main(void){
     return 0;
 
 }
+*/
