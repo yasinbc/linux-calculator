@@ -6,27 +6,28 @@
 #include "multiply.h"
 #include "divide.h"
 
-void v_clear_buffer(){
-    int c;
-    while( (c = getchar()) != '\n' && c != EOF );
+void clear_input_buffer(){ 
+    int character;
+    while( (character = getchar()) != '\n' && character != EOF );
 }
 
 
 
 int main(void){
-    char c_option;
-    bool b_menu_loop;
-    int i_value1, i_value2;
-    float f_value1, f_value2;
+    char user_choice;
+    bool should_loop;
+    int first_integer, second_integer;
+    float first_float, second_float;
     
-    b_menu_loop = true;
-    i_value1 = 0;
-    i_value2 = 0;
-    f_value1 = 0.0;
-    f_value2 = 0.0;
+    should_loop = true;
+    first_integer = 0;
+    second_integer = 0;
+    first_float = 0.0;
+    second_float = 0.0;
+    user_choice = '\0';
     
 
-    while(b_menu_loop){
+    while(should_loop){
         system("clear");
 
         printf("Choose an option: \n");
@@ -38,56 +39,56 @@ int main(void){
         printf("Exit      (e)\n");
         printf("\n");
 
-        c_option = getchar();
+        user_choice = getchar();
     
-        switch(c_option){
+        switch(user_choice){
             case 'a':
                 printf("Add funtion\n\n");
-                v_clear_buffer();
+                clear_input_buffer();
                 printf("Enter 2 values to add\n");
-                scanf("%i", &i_value1);
-                scanf("%i", &i_value2);
-                printf("%i + %i = %i\n", i_value1, i_value2, /*( i_value1 + i_value2 )*/ i_add(i_value1, i_value2) );
+                scanf("%i", &first_integer);
+                scanf("%i", &second_integer);
+                printf("%i + %i = %i\n", first_integer, second_integer, /*( first_integer + second_integer )*/ add_integers(first_integer, second_integer) );
                 break;
             case 's':
                 printf("Subtract function\n\n");
-                v_clear_buffer();
+                clear_input_buffer();
                 printf("Enter 2 values to subtract\n");
-                scanf("%i", &i_value1);
-                scanf("%i", &i_value2);
-                printf("%i - %i = %i", i_value1, i_value2, /*( i_value1 - i_value2 )*/ i_subtract(i_value1, i_value2) );
+                scanf("%i", &first_integer);
+                scanf("%i", &second_integer);
+                printf("%i - %i = %i", first_integer, second_integer, /*( first_integer - second_integer )*/ subtract_integers(first_integer, second_integer) );
                 break;
             case 'm':
                 printf("Multiply function\n\n");
-                v_clear_buffer();
+                clear_input_buffer();
                 printf("Enter 2 values to multiply\n");
-                scanf("%i", &i_value1);
-                scanf("%i", &i_value2);
-                printf("%i * %i = %i", i_value1, i_value2, /*( i_value1 * i_value2 )*/ i_multiply(i_value1, i_value2) );
+                scanf("%i", &first_integer);
+                scanf("%i", &second_integer);
+                printf("%i * %i = %i", first_integer, second_integer, /*( first_integer * second_integer )*/ multiply_integers(first_integer, second_integer) );
                 break;
             case 'd':
                 printf("Divide function\n\n");
-                v_clear_buffer();
+                clear_input_buffer();
                 printf("Enter 2 values to divide\n");
-                scanf("%f", &f_value1);
-                scanf("%f", &f_value2);
-                printf("%f / %f = %f", f_value1, f_value2, /*( f_value1 / f_value2 )*/ f_divide(f_value1, f_value2) );
+                scanf("%f", &first_float);
+                scanf("%f", &second_float);
+                printf("%f / %f = %f", first_float, second_float, /*( first_float / second_float )*/ divide_floats(first_float, second_float) );
                 break;
             case 'e':
                 printf("See you next time\n\n");
-                b_menu_loop = false;
-                v_clear_buffer();
+                should_loop = false;
+                clear_input_buffer();
                 break;
             default:
                 printf("You must choose one of the operations\n");
-                v_clear_buffer();
+                clear_input_buffer();
                 break;
         }
 
 
         printf("\nPress 'Enter' to continue");
         getchar();
-        v_clear_buffer();
+        clear_input_buffer();
 
     };
 
