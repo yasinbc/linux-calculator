@@ -17,8 +17,10 @@ int main(void){
     bool should_loop;
     int first_integer, second_integer;
     float first_float, second_float;
+    bool shoud_exit;
     
     should_loop = true;
+    shoud_exit = false;
     first_integer = 0;
     second_integer = 0;
     first_float = 0.0;
@@ -77,6 +79,7 @@ int main(void){
                 printf("See you next time\n\n");
                 should_loop = false;
                 clear_input_buffer();
+                shoud_exit = true;
                 break;
             default:
                 printf("You must choose one of the operations\n");
@@ -84,10 +87,13 @@ int main(void){
                 break;
         }
 
-
-        printf("\nPress 'Enter' to continue");
-        getchar();
-        clear_input_buffer();
+        if(shoud_exit == false){
+            printf("\nPress 'Enter' to continue");
+            getchar();
+            clear_input_buffer();
+        }else{
+            break;
+        }
 
     };
 
