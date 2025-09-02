@@ -16,12 +16,63 @@ void clear_input_buffer(){
 int main(void){
 
     char input_calculator[20];
+    char string[256];
+    char read_input_to_calculate[20];
+    int read_items;
+    //unsigned int operand1;
 
+    //operand1 = 0;
+
+
+    
+    //Mantiene el string con la longitud del input en pantalla
+    //fgets(string, sizeof(string), stdin);
+    string[strlen(string) - 1] = '\0';
+    int length = strlen(string);
+
+    //printf("%s", string);
+    
+    //read_items = sscanf(string, "asdasasd %s\n\n\n", string);
+
+    input_calculator[strlen(input_calculator) -1] = '\0';
+
+    unsigned int value1 = 0;
+    unsigned int value2 = 0;
+    char operand = '\0';
     printf("Enter your calculation with 2 operands (\'+\', \'-\', \'*\' o \'/\')\n");
-        
     fgets(input_calculator, sizeof(input_calculator), stdin);
 
-    for(int index = 0; index <= sizeof(input_calculator); index++){
+    if(sscanf(input_calculator, "%u%c%u", &value1,&operand, &value2) != 3 ){
+        printf("Enter an operation with 2 values (e.g.: 12*56)\n");
+        return 1;
+    }
+
+    //sscanf(input_calculator, "%s", operand1  );
+    
+    switch(operand){
+        case '+':
+            printf("%u+%u = %u\n", value1, operand, value2, (value1+value2));
+        case '-':
+            printf("%u-%u = %u\n", value1,operand, value2, (value1-value2));
+        case '*':
+            printf("%u*%u = %u\n", value1,operand, value2, (value1*value2));
+        case '/':
+            if(value2 == 0){
+                printf("Result is infinite: %u\n", (value1/value2));
+                
+            }else{
+                printf("%u/%u = %u\n", value1,operand, value2, (value1/value2));
+            }
+
+    }
+
+    /*
+    printf("Operand1 = %u\n", value1);
+    printf("Result: %u\n", (value1+value2));
+
+    fgets(input_calculator, sizeof(input_calculator), stdin);
+
+    for(int i = 0; i <= sizeof(input_calculator); i++){
         if (input_calculator[0] != '\n'){
             printf("Written\n");
             break;
@@ -29,7 +80,7 @@ int main(void){
             printf("EMPTY STRING\n");
             break;
         }
-    }
+    }*/
 
     return 0;
 }
