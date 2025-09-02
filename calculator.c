@@ -38,6 +38,7 @@ int main(void){
 
     unsigned int value1 = 0;
     unsigned int value2 = 0;
+    unsigned int result = 0;
     char operand = '\0';
     printf("Enter your calculation with 2 operands (\'+\', \'-\', \'*\' o \'/\')\n");
     fgets(input_calculator, sizeof(input_calculator), stdin);
@@ -51,20 +52,32 @@ int main(void){
     
     switch(operand){
         case '+':
-            printf("%u+%u = %u\n", value1, operand, value2, (value1+value2));
+            result = value1 + value2;
+            //printf("%u+%u = %u\n", value1, operand, value2, (value1+value2));
+            break;
         case '-':
-            printf("%u-%u = %u\n", value1,operand, value2, (value1-value2));
+            result = value1 - value2;
+            //printf("%u-%u = %u\n", value1,operand, value2, (value1-value2));
+            break;
         case '*':
-            printf("%u*%u = %u\n", value1,operand, value2, (value1*value2));
+            result = value1 * value2;
+            //printf("%u*%u = %u\n", value1,operand, value2, (value1*value2));
+            break;
         case '/':
             if(value2 == 0){
                 printf("Result is infinite: %u\n", (value1/value2));
-                
+                break;        
             }else{
-                printf("%u/%u = %u\n", value1,operand, value2, (value1/value2));
+                result = value1 / value2;
+                //printf("%u/%u = %u\n", value1,operand, value2, (value1/value2));
+                break;
             }
-
+        default:
+            printf("Must enter an operation\n",value1, operand, value2, result);
+            return 1;
     }
+
+    printf("result of %u%c%u = %u\n", value1, operand, value2, result);
 
     /*
     printf("Operand1 = %u\n", value1);
